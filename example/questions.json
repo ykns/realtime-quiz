@@ -1,0 +1,32 @@
+[
+  {
+    "question": "What is the capital of the United States?",
+    "answers": [
+      "Washington, D.C.",
+      "New York City",
+      "Los Angeles",
+      "Chicago"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What is the capital of the United Kingdom?",
+    "answers": [
+      "Manchester",
+      "Liverpool",
+      "Birmingham",
+      "London"
+    ],
+    "correctAnswer": 3
+  },
+  {
+    "question": "What is the capital of France?",
+    "answers": [
+      "Marseille",
+      "Lyon",
+      "Paris",
+      "Toulouse"
+    ],
+    "correctAnswer": 2
+  }
+]
