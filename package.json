@@ -1,0 +1,25 @@
+{
+  "name": "test2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/ably": "^1.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "ably": "^1.2.43",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.2",
+    "typescript": "^5.2.2",
+    "vitest": "0.32.4"
+  }
+}
