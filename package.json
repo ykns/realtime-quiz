@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/ably": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^6.5.0",
     "ably": "^1.2.43",
     "eslint": "^8.48.0",
