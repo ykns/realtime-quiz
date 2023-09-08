@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server:run": "ts-node src/cli.ts server-run",
+    "client:search": "ts-node src/cli.ts client-search",
+    "client:run": "ts-node src/cli.ts client-run",
     "test": "vitest"
   },
   "keywords": [],
@@ -13,6 +16,7 @@
     "@typescript-eslint/eslint-plugin": "^6.5.0",
     "ably": "^1.2.43",
     "cancelable-promise": "^4.3.1",
+    "clipanion": "4.0.0-rc.2",
     "dotenv": "^16.3.1",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^9.0.0",
@@ -22,6 +26,7 @@
     "@tsconfig/recommended": "^1.0.2",
     "@types/node": "^20.5.9",
     "@types/uuid": "^9.0.3",
+    "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.2.2",
     "vitest": "0.32.4"
