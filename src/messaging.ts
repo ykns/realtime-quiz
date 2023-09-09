@@ -1,6 +1,6 @@
 import * as Ably from 'ably/promises';
 import logger from './helpers/logger';
-import { ScoreCards } from './Server';
+import { OrderedScoreCards } from './Server';
 
 export const SearchEvent = 'search';
 export const QuizEvent = 'quiz';
@@ -42,7 +42,7 @@ export type QuizQuestionFinishedMessage = {
 export const QuizScoresMessageType = 'QuizScoresMessageType';
 export type QuizScoresMessage = {
   type: typeof QuizScoresMessageType;
-  data: { scoreCards: ScoreCards };
+  data: { orderedScoreCards: OrderedScoreCards };
 };
 
 export type MessageType =

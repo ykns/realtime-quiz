@@ -28,19 +28,27 @@ export interface Question {
 }
 
 type ClientId = string;
+export type ClientName = string;
+export type Score = number;
 type Client = {
   id: ClientId;
-  name: string;
+  name: ClientName;
 };
 type Clients = {
   [key: ClientId]: Client;
 };
+export type ScoreCard = {
+  name: ClientName;
+  score: number;
+};
 export type ScoreCards = {
   [key: ClientId]: {
-    name: string;
-    score: number;
+    name: ClientName;
+    score: Score;
   };
 };
+
+export type OrderedScoreCards = Array<[ClientId, ClientName, Score]>;
 
 export default class Server {
   quizConfig: QuizConfig;
@@ -65,9 +73,13 @@ export default class Server {
   }
 
   async sendScores(serverSessionId: string, scoreCards: ScoreCards) {
+    const orderedScoreCards = Object.entries(scoreCards)
+      .map(([clientId, scoreCard]) => [clientId, scoreCard.name, scoreCard.score] as [ClientId, ClientName, Score])
+      .sort(([, , scoreA], [, , scoreB]) => scoreB - scoreA);
+
     await this.channel.publish(serverSessionId, QuizScoresMessageType, {
       type: QuizScoresMessageType,
-      data: { scoreCards },
+      data: { orderedScoreCards },
     });
     logger.info('Server.sendScores finished', scoreCards);
   }

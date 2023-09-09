@@ -110,7 +110,7 @@ export default class Client {
             type: QuizAnswerMessageType,
             data: { clientId: this.clientId, questionIndex: index, answerIndex: result },
           });
-          this.consoleWriteLine('Waiting for question next...');
+          this.consoleWriteLine('...');
         } else {
           this.consoleWriteLine('Time is up!');
         }
@@ -121,8 +121,8 @@ export default class Client {
     unsubscribeQuizQuestion();
     logger.debug('Client.handleQuiz - scores', data);
     this.consoleWriteLine('Quiz finished, here are the scores:');
-    for (const [, score] of Object.entries(data.scoreCards)) {
-      this.consoleWriteLine(`[${score.name}] ${score.score} points`);
+    for (const [clientId, name, score] of data.orderedScoreCards) {
+      this.consoleWriteLine(`[${clientId}:${name}] ${score} points`);
     }
   }
 }
